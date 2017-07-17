@@ -1,0 +1,51 @@
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <nav id="nav" class="navigator">
+                <h1>Navegación</h1>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#2">Item 1</a></li>
+                    <li class="nav-item"><a href="#2">Item 2</a></li>
+                    <li class="nav-item"><a href="#3">Item 3</a></li>
+                    <li class="nav-item"><a href="#4">Item 4</a></li>
+                    <li class="nav-item"><a href="#5">Item 5</a></li>
+                    <li class="nav-item"><a href="#6">Item 6</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="articles">
+        <p>modificacando texto del título</p>
+            <input id="input" class="input" type="text">
+            <h1>Novedades</h1>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        </div>
+    </div> <!--fin container-->
+     
+        <script type="text/javascript">
+        
+        //vacío el input al hacer clic en él.
+        $(document).ready(function() {
+        $(".input").val("Ingresa un título");
+        $(".input").on("focus", function() {
+            $(".input").val("");
+        });
+        $(".button").on("click", function(event) {
+            $(".input").val("");
+        });
+        });
+        
+        //funcion cambio de texto
+        $('#input').on('change', function(){
+        var val, h1;
+        val = $('#input').val();
+        h1 = $('.articles').children('h1');
+        h1.text(val);
+        });
+    
+        </script>
+    
+</body>
+</html>
